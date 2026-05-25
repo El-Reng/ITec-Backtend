@@ -30,14 +30,14 @@ def ver_recordatorios() -> list[Recordatorio]:
 
 #RECORDATORIO
 @app.get("/recordatorio/{id}", tags= ["Recordatorios"], response_model= Recordatorio,
-         responses={
-             404: {
-                 "description": "Recordatorio no encontrado",
-                 "content": {
-                     "aplication/json": {"example": {"detail": "Recordatorio no encontrado"}}
-                 }
-             }
-         })
+        responses={
+            404: {
+                "description": "Recordatorio no encontrado",
+                "content": {
+                    "aplication/json": {"example": {"detail": "Recordatorio no encontrado"}}
+                }
+            }
+        })
 def ver_recodatorio(id: Annotated[int, Path(gt=0)]) -> Recordatorio:
     for r in recordatorios:
         if r.id == id:
@@ -52,14 +52,14 @@ def agregar_recordatorio(recordatorio: Recordatorio) -> list[Recordatorio]:
 
 #REESCRIBIR RECORDATORIO
 @app.put("/reescribir-recordatorio/{id}", tags = ["Recordatorios"], response_model= Recordatorio,
-         responses={
-             404: {
-                 "description": "Recordatorio no encontrado",
-                 "content": {
-                     "aplication/json": {"example": {"detail": "Recordatorio no encontrado"}}
-                 }
-             }
-         })
+        responses={
+            404: {
+                "description": "Recordatorio no encontrado",
+                "content": {
+                    "aplication/json": {"example": {"detail": "Recordatorio no encontrado"}}
+                }
+            }
+        })
 def reescribir_recordatorio(id: Annotated[int, Path(gt=0)], recordatorio: RecordatorioUpdate) -> Recordatorio:
     for r in recordatorios:
         if r.id == id:
@@ -70,14 +70,14 @@ def reescribir_recordatorio(id: Annotated[int, Path(gt=0)], recordatorio: Record
 
 #BORRAR RECORDATORIO
 @app.delete("/borrar-recordatorio/{id}", tags = ["Recordatorios"], response_model= list[Recordatorio],
-         responses={
-             404: {
-                 "description": "Recordatorio no encontrado",
-                 "content": {
-                     "aplication/json": {"example": {"detail": "Recordatorio no encontrado"}}
-                 }
-             }
-         })
+        responses={
+            404: {
+                "description": "Recordatorio no encontrado",
+                "content": {
+                    "aplication/json": {"example": {"detail": "Recordatorio no encontrado"}}
+                }
+            }
+        })
 def borrar_recordatorio(id: Annotated[int, Path(gt=0)]) -> list[Recordatorio]:
     for r in recordatorios:
         if r.id == id:
