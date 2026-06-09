@@ -1,14 +1,14 @@
 # ITec-Backtend
 
-Práctico 1: Crud en memoria con FastAPI
+Práctico 2: Pydantic 
 
-¿Qué tiene que tener el práctico?: 
-Un entorno virtual con fastapi[standard] (y/o un requirements.txt*)
-un main o app.py con:
-      Una variable que simule una tabla en la base de datos; con temática libre (excepto videojuegos, puede ser cualquier cosa).
-      5 path operations; cada una con uno de los métodos http que vimos **. Estos deben modificar la variable que simula la db según su respectivo método
+En el práctico 1 dejamos un crud funcional en memoria, guardando datos en un diccionario. Para este práctico vamos a seguir por las mismas líneas, pero agregando pydantic para la validación de tipos y restricciones.
 
-*REQUIREMENTS.TXT:
-Si el proyecto incluye un requirements, no hace falta subir el venv (siempre y cuando el requirements se haya creado adentro del entorno virtual, sino queda cualquier cosa)
+Para este segundo práctico la idea es que me entreguen una aplicación de FastAPI con un crud en memoria que incluya:
+- Esquemas de pydantic para la estructura de los diccionarios (equivalente a la tabla en db).
+- Parámetros definidos con metadatos usando Annotated junto con Path() o Query(). Los mismos deben incluir restricciones   (mayor que, longitud máxima, etc...).
+- Asimismo, los esquemas de pydantic también deben estar definidos con Annotated y usar Field().
+- Los endpoints que reciban id como parámetro de ruta (path()) deben levantar un HTTPException() si no encuentra se encuentra coincidencia por id.
+- Finalmente, los path operations deben incluir un response_model y, si aplicase, un responses.
 
-**5 Path Operations: Pido 2 GET (get todo y get por id), 1 post, 1 put y 1 delete. El patch no es requisito pero si lo quieren agregar son bienvenidos.
+Pueden trabajar a partir de lo que entregaron en el práctico anterior, sumandole todas estas features.
