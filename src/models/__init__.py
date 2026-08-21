@@ -1,0 +1,1 @@
+from .tareas_models import Tarea
